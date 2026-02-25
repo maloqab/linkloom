@@ -21,22 +21,28 @@ body {
 .app-shell {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 2rem 1rem 2.5rem;
+  padding: 1.25rem 0.9rem 2rem;
 }
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
   letter-spacing: 0.03em;
 }
 
 .hero p {
-  margin-top: 0.4rem;
+  margin-top: 0.45rem;
   color: #b7c0d8;
 }
 
+.notice {
+  margin: 0.9rem 0 0;
+  font-size: 0.9rem;
+  color: #a9bbea;
+}
+
 .layout-grid {
-  margin-top: 1.4rem;
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
@@ -44,9 +50,9 @@ body {
 
 .panel {
   border: 1px solid #2a3359;
-  background: rgba(10, 14, 30, 0.85);
+  background: rgba(10, 14, 30, 0.9);
   border-radius: 14px;
-  padding: 1rem;
+  padding: 0.95rem;
   backdrop-filter: blur(6px);
 }
 
@@ -57,16 +63,16 @@ body {
 .panel-input label {
   display: block;
   font-weight: 600;
-  font-size: 0.92rem;
-  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
 }
 
 .panel-input textarea {
-  margin-top: 0.35rem;
+  margin-top: 0.3rem;
   width: 100%;
   resize: vertical;
   min-height: 120px;
-  padding: 0.7rem;
+  padding: 0.68rem;
   border-radius: 10px;
   border: 1px solid #34406d;
   background: #090e22;
@@ -79,10 +85,17 @@ body {
   border-color: transparent;
 }
 
+.warning {
+  margin: 0.05rem 0 0.75rem;
+  color: #ffd286;
+  font-size: 0.86rem;
+}
+
 .actions {
   display: flex;
   justify-content: flex-end;
-  gap: 0.6rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 button {
@@ -95,11 +108,16 @@ button {
   background: linear-gradient(180deg, #5571ff, #415add);
 }
 
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 button.ghost {
   background: #222c4f;
 }
 
-button:hover {
+button:hover:not(:disabled) {
   filter: brightness(1.08);
 }
 
@@ -109,20 +127,21 @@ button:hover {
   justify-content: space-between;
   gap: 0.5rem;
   margin-bottom: 0.8rem;
+  flex-wrap: wrap;
 }
 
 .brief-header h2 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .brief-header span {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: #9eb0de;
 }
 
 h3 {
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.42rem;
 }
 
 ul {
@@ -136,6 +155,11 @@ li + li {
 
 a {
   color: #9db2ff;
+  word-break: break-word;
+}
+
+.invalid {
+  color: #ffafaf;
 }
 
 .empty {
@@ -144,7 +168,16 @@ a {
 }
 
 @media (min-width: 900px) {
+  .app-shell {
+    padding: 2rem 1rem 2.5rem;
+  }
+
   .layout-grid {
+    margin-top: 1.4rem;
     grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  .panel {
+    padding: 1rem;
   }
 }
