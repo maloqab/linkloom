@@ -1,14 +1,18 @@
 # LinkLoom
 
-LinkLoom is a local-first utility that turns scattered links and raw notes into one clean briefing page.
+A context packer that turns scattered links, notes, and files into clean, shareable briefings.
 
-## MVP Scope
+## Features
 
-- Input: URLs (one per line) + pasted notes
-- Output: unified briefing pane (sources + notes)
-- Export: Markdown (`.md`)
-- Storage: local-first in browser `localStorage`
-- No backend, auth, or server-side persistence
+- **Smart paste** — paste URLs and notes together, URLs are auto-detected
+- **File drop** — drag & drop `.txt` or `.md` files to import content
+- **Multiple briefings** — create, manage, and switch between briefings
+- **Editable items** — click any source title or note to edit inline
+- **URL enrichment** — favicons fetched automatically, custom titles per link
+- **Live preview** — Markdown output updates in real-time
+- **Export** — download as `.md`, copy to clipboard, or share via URL
+- **Share links** — encode a briefing into a URL (zero-backend sharing)
+- **Local-first** — everything saved in browser `localStorage`, no server needed
 
 ## Run Locally
 
@@ -17,8 +21,6 @@ npm install
 npm run dev
 ```
 
-Open the app at the URL shown by Vite (default `http://localhost:5173`).
-
 ## Build
 
 ```bash
@@ -26,14 +28,8 @@ npm run build
 npm run preview
 ```
 
-## UX Notes (Checkpoint 2)
-
-- Empty-state guard: export disabled until there is content
-- Error handling: invalid URL lines are flagged in UI and included in markdown under a review section
-- Readability polish: responsive spacing + mobile fit improvements
-- Export formatting: title, timestamp, markdown links for valid URLs, notes section
-
 ## Tech
 
-- React + TypeScript + Vite
-- Plain CSS (no UI framework)
+- React 19 + TypeScript + Vite
+- Zero runtime dependencies beyond React
+- Plain CSS with custom properties
